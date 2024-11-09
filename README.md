@@ -21,7 +21,7 @@ console.log('Hello');
 1. 任意のWebブラウザににアクセスする．今回は```localhost:8080/public/janken.html```,```localhost:8080/public/game.html```,```localhost:8080/public/lunch.html```の3つから選ぶことができる．
 ## 編集したファイルをGitで管理する方法
 1. ```ターミナル```を起動する．
-1. 適切なディレクトリに移動し，```git add```と入力する．
+1. 適切なディレクトリに移動し，```git add .```と入力する．
 1. ```git commit -am 'コメント'```と入力する(コメントには変更理由や変更内容を記述する)．
 1. ```git push```と入力して終了．
 
