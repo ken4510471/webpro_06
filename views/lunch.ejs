@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>昼ご飯</title>
+</head>
+<body>
+    <p>あなたの食べたい昼ご飯は<%= your %>系です．</p>
+    <p>コンピュータは<%= cpu %>系です．</p>
+    <p>判定：<%= judgement %></p>
+    <p>現在<%= total %>回目中<%= win %>回昼ご飯を食べれています．</p>
+    <hr>
+    <form action="lunch">
+        <input type="text" name="lunch" required>
+        <label for="lunch">今日は何を食べる？</label>
+        <input type="hidden" name="win" value="<%= win %>">
+        <input type="hidden" name="total" value="<%= total %>">
+        <input type="submit" values="じゃんけん　ポン">
+    </form>   
+</body>
+</html>

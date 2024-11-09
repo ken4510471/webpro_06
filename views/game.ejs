@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>ゲーム</title>
+</head>
+<body>
+    <p>あなたの遊びたいゲームは<%= your %>です．</p>
+    <p>コンピュータは<%= cpu %>です．</p>
+    <p>判定：<%= judgement %></p>
+    <p>現在<%= total %>回目中<%= win %>回ゲームしています．</p>
+    <hr>
+    <form action="game">
+        <input type="text" name="game" required>
+        <label for="game">次は何を遊ぶ？</label>
+        <input type="hidden" name="win" value="<%= win %>">
+        <input type="hidden" name="total" value="<%= total %>">
+        <input type="submit" values="じゃんけん　ポン">
+    </form>   
+</body>
+</html>

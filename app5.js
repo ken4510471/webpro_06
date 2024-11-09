@@ -94,4 +94,110 @@ app.get("/janken", (req, res) => {
   }
   res.render( 'janken', display );
 });
+
+app.get("/game", (req, res) => {
+  let game = req.query.game;
+  let win = Number( req.query.win||0 );
+  let total = Number( req.query.total||0 );
+  console.log( {game, win, total});
+  const num = Math.floor( Math.random() * 3 + 1 );
+  let cpu = '';
+  if( num==1 ) cpu = 'モンハン';
+  else if( num==2 ) cpu = 'マイクラ';
+  else cpu = 'APEX';
+  let judgement;
+  // ここに勝敗の判定を入れる
+  // 今はダミーで人間の勝ちにしておく
+  if(game ==='モンハン' && cpu ==='モンハン'){
+  judgement = 'おめでとう';
+  win += 1;
+  total += 1;
+  }else if(game==='モンハン' && cpu ==='マイクラ'){
+  judgement = '残念　勉強してください';
+  win += '';
+  total += 1;
+  }else if(game==='モンハン' && cpu ==='APEX'){
+  judgement = '残念　勉強してください';
+  win += '';
+  total += 1;
+  }
+
+  if(game ==='マイクラ' && cpu ==='マイクラ'){
+    judgement = 'おめでとう';
+    win += 1;
+    total += 1;
+    }else if(game==='マイクラ' && cpu ==='モンハン'){
+    judgement = '残念　勉強してください';
+    win += '';
+    total += 1;
+    }else if(game==='マイクラ' && cpu ==='APEX'){
+    judgement = '残念　勉強してください';
+    win += '';
+    total += 1;
+    } 
+
+  if(game ==='APEX' && cpu ==='APEX'){
+    judgement = 'おめでとう';
+    win += 1;
+    total += 1;
+    }else if(game==='APEX' && cpu ==='モンハン'){
+    judgement = '残念　勉強してください';
+    win += '';
+    total += 1;
+    }else if(game==='APEX' && cpu ==='マイクラ'){
+    judgement = '残念　勉強してください';
+    win += '';
+    total += 1;
+   }
+  const display = {
+    your: game,
+    cpu: cpu,
+    judgement: judgement,
+    win: win,
+    total: total
+  }
+  res.render( 'game', display );
+});
+
+app.get("/lunch", (req, res) => {
+  let lunch = req.query.lunch;
+  let win = Number( req.query.win||0 );
+  let total = Number( req.query.total||0 );
+  console.log( {lunch, win, total});
+  const num = Math.floor( Math.random() * 2 + 1 );
+  let cpu = '';
+  if( num==1 ) cpu = '肉';
+  else if( num==2 ) cpu = '魚';
+  let judgement;
+  // ここに勝敗の判定を入れる
+  // 今はダミーで人間の勝ちにしておく
+  if(lunch ==='肉' && cpu ==='肉'){
+  judgement = 'おめでとう　ステーキ食べていいよ';
+  win += 1;
+  total += 1;
+  }else if(lunch==='肉' && cpu ==='魚'){
+  judgement = '昼ご飯抜きです';
+  win += '';
+  total += 1;
+  }
+
+  if(lunch ==='魚' && cpu ==='魚'){
+    judgement = 'おめでとう　寿司食べていいよ';
+    win += 1;
+    total += 1;
+    }else if(lunch==='魚' && cpu ==='肉'){
+    judgement = '昼ご飯抜きです';
+    win += '';
+    total += 1;
+    }
+
+  const display = {
+    your: lunch,
+    cpu: cpu,
+    judgement: judgement,
+    win: win,
+    total: total
+  }
+  res.render( 'lunch', display );
+});
 app.listen(8080, () => console.log("Example app listening on port 8080!"));
