@@ -13,9 +13,6 @@ public/lunch.html|今日の昼ご飯の選択画面
 views/janken.ejs|じゃんけんのテンプレートファイル名
 views/game.ejs|ゲーム選択のテンプレートファイル名
 views/lunch.ejs|昼ご飯選択のテンプレートファイル名
-```javascript
-console.log('Hello');
-```
 ## 起動方法
 1. ```node app5.js```を起動する．
 1. 任意のWebブラウザににアクセスする．今回は```localhost:8080/public/janken.html```,```localhost:8080/public/game.html```,```localhost:8080/public/lunch.html```の3つから選ぶことができる．
