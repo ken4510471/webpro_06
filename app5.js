@@ -31,6 +31,7 @@ app.get("/luck", (req, res) => {
   res.render( 'luck', {number:num, luck:luck} );
 });
 
+
 app.get("/janken", (req, res) => {
   let hand = req.query.hand;
   let win = Number( req.query.win||0 );
