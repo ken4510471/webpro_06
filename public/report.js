@@ -42,6 +42,5 @@ function fetchContent(type) {
           contentDiv.textContent = data.message;
         }
       })
-      .catch(error => console.error("Error:", error));
   }
   

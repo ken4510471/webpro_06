@@ -6,10 +6,7 @@ app.use("/public", express.static(__dirname + "/public"));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-// HTMLを返す
-app.get("/", (req, res) => {
-  res.sendFile(__dirname + "/index.html");
-});
+
 
 // APIエンドポイント
 app.post("/house", (req, res) => {
