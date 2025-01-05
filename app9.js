@@ -6,9 +6,6 @@ app.use("/public", express.static(__dirname + "/public"));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-
-
-// APIエンドポイント
 app.post("/house", (req, res) => {
   res.json({ message: ["ハンバーグ","卵焼き","カップラーメン"] });
 });

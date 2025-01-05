@@ -27,9 +27,8 @@ function fetchContent(type) {
         document.getElementById("content-screen").style.display = "block";
   
         const contentDiv = document.getElementById("content");
-        contentDiv.innerHTML = ""; // 既存の内容をクリア
+        contentDiv.innerHTML = ""; 
   
-        // メッセージが配列の場合はリスト表示
         if (Array.isArray(data.message)) {
           const ul = document.createElement("ul");
           data.message.forEach(item => {
