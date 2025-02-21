@@ -167,3 +167,19 @@ win-->end1
 if-->|no|loose
 loose-->end1
 ```
+
+```mermaid
+sequenceDiagram
+    participant Webブラウザ
+    participant Webサーバ
+    participant SPAクライアント
+    participant SPAサーバ
+
+    Webブラウザ->>Webサーバ: ① Webページの取得
+    Webサーバ-->>Webブラウザ: ② HTML, JS
+    Webブラウザ->>SPAクライアント: ③ 起動
+    SPAクライアント->>SPAサーバ: ④ Post(家)
+    SPAサーバ-->>SPAクライアント: ⑤ 「家」のデータ
+    SPAクライアント->>SPAサーバ: ⑥ Post(外)
+    SPAサーバ-->>SPAクライアント: ⑦ 「外」のデータ
+```
