@@ -57,12 +57,14 @@ app.get("/keiyo2", (req, res) => {
   res.render('keiyo2', {data: station2} );
 });
 
+
 app.get("/keiyo2/:number", (req, res) => {
   // 本来ならここにDBとのやり取りが入る
   const number = req.params.number;
   const detail = station2[ number ];
   res.render('keiyo2_detail', {data: detail} );
 });
+
 
 app.get("/hello1", (req, res) => {
   const message1 = "Hello world";
