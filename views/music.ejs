@@ -7,11 +7,10 @@
 <body>
   <h2>好きな曲の詳細</h2>
   <table>
-    <tr><th>ID</th><th>好きな曲コード</th><th>曲名</th></tr>
+    <tr><th>ID</th><th>曲名</th></tr>
       <% let number = 0 %>
       <% for( let row of data ) { %>
         <tr><td><%= row.id %></td>
-        <td><%= row.code %></td>
         <td><a href="/music/<%= number %>"><%= row.name %></a></td>
         <td><a href="/music/delete/<%= number %>">削除</a></td></tr>
         <% number += 1 %>

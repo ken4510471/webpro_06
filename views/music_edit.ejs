@@ -1,0 +1,21 @@
+<!Doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title><%= data.name %></title>
+</head>
+<body>
+  <h2><%= data.name %>の編集</h2>
+  <form action="/music/update/<%= data.id - 1 %>" method="POST">
+    <table>
+      <tr><th>項目</th><th>データ</th></tr>
+      <tr><td>曲名</td><td><input type="text" name="name" value="<%= data.name %>"></td></tr>
+      <tr><td>作詞</td><td><input type="text" name="sakusi" value="<%= data.sakusi %>"></td></tr>
+      <tr><td>作曲</td><td><input type="text" name="sakkyoku" value="<%= data.sakkyoku %>"></td></tr>
+      <tr><td>リリース日</td><td><input type="text" name="ririsu" value="<%= data.ririsu %>"></td></tr>
+    </table>
+    <input type="submit" values="登録">
+  </form>
+  <a href="/music/">好きな曲一覧に戻る</a>
+</body>
+</html>
