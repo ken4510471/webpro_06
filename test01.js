@@ -1,3 +1,5 @@
+"use strict";
+
 const express = require("express");
 const app = express();
 
@@ -64,8 +66,6 @@ app.post("/music/update/:number", (req, res) => {
 app.get("/music/delete_confirm/:number", (req, res) => {
   const number = req.params.number;
   const detail = music[number];
-  
-  // 確認画面を表示
   res.render('music_delete_confirm', { id: number, data: detail });
 });
 
