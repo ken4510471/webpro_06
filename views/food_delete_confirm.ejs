@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>削除の確認</title>
+</head>
+<body>
+    <div>
+        <h1>削除の確認</h1>
+        <p>以下の曲を削除してもよろしいですか？</p>
+        
+        <div>
+            <strong>食べ物名:</strong> <%= data.name %><br>
+        </div>
+
+        <form action="/food/delete/<%= id %>" method="POST">
+            <input type="submit" value="本当に削除する" class="btn-danger">
+        </form>
+
+        <a href="/food">キャンセル</a>
+    </div>
+</body>
+</html>

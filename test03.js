@@ -55,10 +55,17 @@ app.post("/food/update/:number", (req, res) => {
   res.redirect('/food' );
 });
 
-//削除
-app.get("/food/delete/:number", (req, res) => {
-  food.splice( req.params.number, 1 );
-  res.redirect('/food' );
+// 削除確認画面を表示
+app.get("/food/delete_confirm/:number", (req, res) => {
+  const number = req.params.number;
+  const detail = food[number];
+  res.render('food_delete_confirm', { id: number, data: detail });
+});
+
+// 削除
+app.post("/food/delete/:number", (req, res) => {
+  food.splice(req.params.number, 1);
+  res.redirect('/food');
 });
 
 app.listen(3000, () => console.log("Example app listening on port 3000!"));

@@ -6,13 +6,13 @@
 </head>
 <body>
   <h2>好きなゲームの詳細</h2>
-  <table>
+  <table border="1">
     <tr><th>ID</th><th>ゲーム名</th></tr>
       <% let number = 0 %>
       <% for( let row of data ) { %>
         <tr><td><%= row.id %></td>
         <td><a href="/game/<%= number %>"><%= row.name %></a></td>
-        <td><a href="/game/delete/<%= number %>">削除</a></td></tr>
+        <td><a href="/game/delete_confirm/<%= number %>"  style="color: #e74c3c;">削除する</a></td></tr>
         <% number += 1 %>
       <% } %>
   </table>

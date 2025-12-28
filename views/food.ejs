@@ -6,13 +6,13 @@
 </head>
 <body>
   <h2>好きな食べ物の詳細</h2>
-  <table>
+  <table border="1">
     <tr><th>ID</th><th>食べ物名</th></tr>
       <% let number = 0 %>
       <% for( let row of data ) { %>
         <tr><td><%= row.id %></td>
         <td><a href="/food/<%= number %>"><%= row.name %></a></td>
-        <td><a href="/food/delete/<%= number %>">削除</a></td></tr>
+        <td><a href="/food/delete_confirm/<%= number %>"  style="color: #e74c3c;">削除する</a></td></tr>
         <% number += 1 %>
       <% } %>
   </table>

@@ -56,10 +56,17 @@ app.post("/game/update/:number", (req, res) => {
   res.redirect('/game' );
 });
 
-//削除
-app.get("/game/delete/:number", (req, res) => {
-  game.splice( req.params.number, 1 );
-  res.redirect('/game' );
+// 削除確認画面を表示
+app.get("/game/delete_confirm/:number", (req, res) => {
+  const number = req.params.number;
+  const detail = game[number];
+  res.render('game_delete_confirm', { id: number, data: detail });
+});
+
+// 削除
+app.post("/game/delete/:number", (req, res) => {
+  game.splice(req.params.number, 1);
+  res.redirect('/game');
 });
 
 app.listen(3000, () => console.log("Example app listening on port 3000!"));

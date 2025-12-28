@@ -60,10 +60,19 @@ app.post("/music/update/:number", (req, res) => {
   res.redirect('/music' );
 });
 
-//削除
-app.get("/music/delete/:number", (req, res) => {
-  music.splice( req.params.number, 1 );
-  res.redirect('/music' );
+// 削除確認画面を表示
+app.get("/music/delete_confirm/:number", (req, res) => {
+  const number = req.params.number;
+  const detail = music[number];
+  
+  // 確認画面を表示
+  res.render('music_delete_confirm', { id: number, data: detail });
+});
+
+// 削除
+app.post("/music/delete/:number", (req, res) => {
+  music.splice(req.params.number, 1);
+  res.redirect('/music');
 });
 
 app.listen(3000, () => console.log("Example app listening on port 3000!"));
